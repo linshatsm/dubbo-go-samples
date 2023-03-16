@@ -1,11 +1,27 @@
 # dubbo server yaml configure file
 
 dubbo:
+  # metadata-report:
+  #   protocol: nacos
+  #   address: 127.0.0.1:8848
+  #   group: demo-a
+  #   namespace: dead070f-d84f-44dd-a7f8-9b0370d558cc
+  # config-center:
+  #   protocol: nacos
+  #   address: 127.0.0.1:8848
+  #   group: demo-a
+  #   namespace: dead070f-d84f-44dd-a7f8-9b0370d558cc
   registries:
-    demoZK:
-      protocol: zookeeper
+    # demoZK:
+    #   protocol: zookeeper
+    #   timeout: 3s
+    #   address: 127.0.0.1:2181
+    nacos:
+      protocol: nacos
       timeout: 3s
-      address: 127.0.0.1:2181
+      address: 127.0.0.1:8848
+      # group: demo-a
+      # namespace: dead070f-d84f-44dd-a7f8-9b0370d558cc
   protocols:
     grpcProtocol:
       name: grpc
@@ -14,6 +30,10 @@ dubbo:
     services:
       GreeterProvider:
         interface: org.apache.dubbo.UserProvider
+  metrics:
+    enable: false
+    path: /custom-metrics-path
+    port: 9091
   logger:
     zap-config:
       level: info
