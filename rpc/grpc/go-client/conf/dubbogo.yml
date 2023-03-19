@@ -1,11 +1,19 @@
 # dubbo client yaml configure file
 
 dubbo:
+  application:
+    version: 0.0.1
   registries:
-    demoZK:
-      protocol: zookeeper
+    # demoZK:
+    #   protocol: zookeeper
+    #   timeout: 3s
+    #   address: 127.0.0.1:2181
+    nacos:
+      protocol: nacos
       timeout: 3s
-      address: 127.0.0.1:2181
+      address: 127.0.0.1:8848
+      group: DEFAULT_GROUP
+      registry-type: interface
   consumer:
     references:
       GreeterClientImpl:
