@@ -10,11 +10,15 @@ dubbo:
   metadata-report:
     protocol: nacos
     address: 127.0.0.1:8848
+    group: DEFAULT_GROUP
+    namespace: public
     # group: demo-a
   #   namespace: dead070f-d84f-44dd-a7f8-9b0370d558cc
   config-center:
     protocol: nacos
     address: 127.0.0.1:8848
+    group: DEFAULT_GROUP
+    namespace: public
     # group: demo-a
   #   namespace: dead070f-d84f-44dd-a7f8-9b0370d558cc
   registries:
@@ -26,6 +30,8 @@ dubbo:
       protocol: nacos
       timeout: 3s
       address: 127.0.0.1:8848
+      group: DEFAULT_GROUP
+      namespace: public
       # group: demo-a
       # namespace: dead070f-d84f-44dd-a7f8-9b0370d558cc
   protocols:
